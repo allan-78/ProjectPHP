@@ -22,3 +22,12 @@ while ($order = $result->fetch_assoc()) {
             <td>$" . number_format($order['total_amount'], 2) . "</td>
             <td>" . ucfirst($order['order_status']) . "</td>
             <td>" . $order['order_date'] . "</td>
+            <td>
+                <a href='update_order.php?id=" . $order['order_id'] . "'>Update</a>
+                <a href='delete_order.php?id=" . $order['order_id'] . "'>Delete</a>
+            </td>
+          </tr>";
+}
+echo "</table>";
+include '../includes/footer.php';
+?>
